@@ -1,6 +1,8 @@
-# Ceaser Cipher Encryption Decryption and Crypt Analysis
+# Caesar Cipher Encryption Decryption and Crypt Analysis
 plaintext = input("Enter the value of Plaintext : ")
 key = int(input("Enter the value of key : "))
+
+# Encryption of Plain text to Cipher text
 
 def encrypt(p,k):
     cipher=""
@@ -11,6 +13,9 @@ def encrypt(p,k):
 ciphertext = encrypt(plaintext,key)
 print("Ciphertext for the plain text :",plaintext," is ",ciphertext)
 
+
+# Decrption of Cipher text to Plain text
+
 def decrypt(c,k):
     plain=""
     for i in c:
@@ -19,6 +24,9 @@ def decrypt(c,k):
 
 decrypted_plain = decrypt(ciphertext,key)
 print("Plaintext for the cipher text :",ciphertext," is ",decrypted_plain)
+
+
+# Crypt Analysis(Brute Force Attack) of caeser cipher to get key from the cipher text 
 
 def crypt_analysis(c,p):
     for j in range(1,26):
