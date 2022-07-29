@@ -1,4 +1,7 @@
+#Take plaintext from the user
 plaintext=input("Enter the plaintext : ")
+
+#Fix the key or we may take a dynamic key
 key="xyzabcdefghijklmnopqrstuvw"
 
 def encrypt(plaintext,key):
@@ -6,8 +9,10 @@ def encrypt(plaintext,key):
     for i in plaintext:
         if i.isupper():
             cipher += key[ord(i)-65]
-        else:
+        elif i.islower():
             cipher += key[ord(i)-97]
+        else:
+            cipher += i
     return cipher
  
 ciphertext= encrypt(plaintext,key)
@@ -19,8 +24,10 @@ def decrypt(ciphertext,key):
         #print(key.find(i))
         if i.isupper():
             plain += chr(key.find(i)+65)
-        else:
+        elif i.islower():
             plain += chr(key.find(i)+97)
+        else:
+            plain += i
         
     return plain
 
